@@ -54,7 +54,8 @@ public class Runner {
 		}
 		
 		else {
-			return recursion(word.substring(0, word.length()-1))+"\n" +word;
+			return word +"\n" + recursion(word.substring(0, word.length()-1));
+			//return recursion(word.substring(0, word.length()-1)) + "\n" + word;
 		}
 	}
 }
