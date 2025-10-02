@@ -19,13 +19,17 @@ public class Runner {
 	    String output = " ";
 	    
 	    while (output.charAt(0) != 'y' && output.charAt(0) != 'n'){
-	    	output = recursion(word1, word2);
+	    	output = checkingIfMatch(word1, word2);
 	    }
 	    
 	    System.out.println(output);
+	    
+	    
+	    System.out.println(recursion(word1));
 	}
 	
-	public static String recursion(String word1, String word2) {
+	public static String checkingIfMatch(String word1, String word2) {
+		
 		if(!wordarray.equals(word1)) {
 			wordarray += word1.charAt(count);
 			
@@ -41,6 +45,16 @@ public class Runner {
 		
 		else {
 			return "no "+word2 +" is not in "+word1;
+		}
+	}
+	
+	public static String recursion(String word) {
+		if (word.length() == 0) {
+			return "";
+		}
+		
+		else {
+			return recursion(word.substring(0, word.length()-1))+"\n" +word;
 		}
 	}
 }
