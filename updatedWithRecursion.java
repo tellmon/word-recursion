@@ -16,8 +16,13 @@ public class Runner {
 	    System.out.println("Enter word2 ");
 	    String word2 = myObj.nextLine();  // Read user input
 	    
+	    String output = " ";
 	    
-	    recursion(word1, word2);
+	    while (output.charAt(0) != 'y' && output.charAt(0) != 'n'){
+	    	output = recursion(word1, word2);
+	    }
+	    
+	    System.out.println(output);
 	}
 	
 	public static String recursion(String word1, String word2) {
@@ -30,7 +35,7 @@ public class Runner {
 			
 			else {
 				count += 1;
-				return "";
+				return " ";
 			}
 	    }
 		
